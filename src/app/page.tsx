@@ -1,104 +1,94 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kid's Todo App - Home",
+  description: "A fun todo app for kids to track their tasks and activities",
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Visit our
-            <Link
-              href="/todo"
-              className="text-indigo-600 hover:text-indigo-800 font-semibold ml-1"
-            >
-              Kid&apos;s Todo App
-            </Link>
-          </li>
-          <li className="mb-2 tracking-[-.01em]">
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-16 px-4 sm:px-6">
+      <main className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 sm:p-10 backdrop-blur-sm bg-white/90">
+        <div className="flex flex-col items-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-indigo-600 mb-3">
+            Kid&apos;s Todo Adventure
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-6"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <Image
+            className="mb-8"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={180}
+            height={38}
+            priority
+          />
+
+          <p className="text-xl text-center text-gray-600 max-w-lg mb-8">
+            A fun and colorful task manager designed especially for kids to
+            organize their activities!
+          </p>
+
           <Link
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-indigo-600 text-white gap-2 hover:bg-indigo-700 font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+            className="rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-8 text-lg transition-all transform hover:scale-105 active:scale-95 shadow-md"
             href="/todo"
           >
-            Try Our Kid&apos;s Todo App
+            Start Your Todo Adventure!
           </Link>
-
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="bg-indigo-50 rounded-xl p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-indigo-700 mb-3">
+              Easy to Use
+            </h2>
+            <p className="text-gray-600">
+              Simple and intuitive interface designed for kids of all ages.
+            </p>
+          </div>
+          <div className="bg-purple-50 rounded-xl p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-purple-700 mb-3">
+              Fun Rewards
+            </h2>
+            <p className="text-gray-600">
+              Get rewarded with animations and celebrations when tasks are
+              completed!
+            </p>
+          </div>
+          <div className="bg-pink-50 rounded-xl p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-pink-700 mb-3">
+              Build Good Habits
+            </h2>
+            <p className="text-gray-600">
+              Learn responsibility and task management in a fun, engaging way.
+            </p>
+          </div>
+        </div>
+
+        <footer className="text-center border-t border-gray-200 pt-6">
+          <p className="text-sm text-gray-500 mb-4">
+            Made with ❤️ for awesome kids!
+          </p>
+          <div className="flex justify-center gap-6">
+            <Link
+              href="/todo"
+              className="text-indigo-600 hover:text-indigo-800 font-medium"
+            >
+              Try the App
+            </Link>
+            <a
+              className="text-indigo-600 hover:text-indigo-800 font-medium"
+              href="https://nextjs.org/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn Next.js
+            </a>
+          </div>
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
